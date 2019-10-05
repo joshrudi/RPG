@@ -173,7 +173,8 @@ battleTalk = ["the slime tries to wiggle menacingly.  you suddenly have a desire
 "the slime opens its mouth to say something, but blushes and looks away.  social anxiety +3 baka!",
 "you wonder how slimes take showers without getting washed down the drain...maybe thats why they're slimey?",
 "the slime suddenly becomes nervous...on its lips you read: 'were taxes due last week?'",
-"you briefly consider wiggling to the slime, but then think it'd look stupid if you did it"]
+"you briefly consider wiggling to the slime, but then think it'd look stupid if you did it",
+"the slime jiggles to the music"]
 
 clear()
 print("The Legend Of Nico")
