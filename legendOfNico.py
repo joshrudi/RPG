@@ -190,6 +190,10 @@ print("a wild slime approaches!")
 input()
 clear()
 
+print("uptempo music beings playing out of thin air!")
+input()
+clear()
+
 while slime.getStatus() and player.getStatus():
 
     actionPerformed = False
