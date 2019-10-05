@@ -181,7 +181,7 @@ battleTalk = ["the slime tries to wiggle menacingly.  you suddenly have a desire
 
 clear()
 print("The Legend Of Nico")
-print("© 2019 Rudaitis Industries")
+print("C 2019 Rudaitis Industries")
 print("press any button to begin...")
 input()
 clear()
