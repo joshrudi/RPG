@@ -2,7 +2,10 @@ import random
 import time
 import os
 
-clear = lambda: os.system('clear')
+if (os.name == 'nt'):
+    clear = lambda: os.system('cls')
+else:
+    clear = lambda: os.system('clear')
 
 # an actor is character that can "ACT" in the game, e.g. the player an enemy, etc...
 class actor:
