@@ -7,6 +7,12 @@ if (os.name == 'nt'):
 else:
     clear = lambda: os.system('clear')
 
+# Storytelling device for the Legend of Nico (>W<) #
+def nicoPrint(message):
+    print(message)
+    input()
+    clear()
+
 # an actor is character that can "ACT" in the game, e.g. the player an enemy, etc...
 class actor:
 
@@ -22,9 +28,7 @@ class actor:
 
     # returns int representing damage done
     def performAttack(self):
-        print(self.name + " attacks!")
-        input()
-        clear()
+        nicoPrint(self.name + " attacks!")
         return random.randint(0, self.attack) + self.weapon.getEffect()
 
     # take damage, OUCH!
@@ -33,13 +37,9 @@ class actor:
         # at the moment defense acts as immediate dampening, simple subtraction
         if incomingAttack > self.defense:
             self.health -= (incomingAttack - self.defense)
-            print(self.name + " took " + str(incomingAttack - self.defense) + " damage!")
-            input()
-            clear()
+            nicoPrint(self.name + " took " + str(incomingAttack - self.defense) + " damage!")
         else:
-            print(self.name + " dexterously dodged the attack!")
-            input()
-            clear()
+            nicoPrint(self.name + " dexterously dodged the attack!")
         
         # RIP
         if self.health < 0:
@@ -76,16 +76,12 @@ class actor:
         item = self.getItemFromInventory(itemName)
 
         if (item == None):
-            print("Thats illegal! item not found")
-            input()
-            clear()
+            nicoPrint("That's illegal! item not found")
             return False
 
         if item.getType() == "heal":
             self.heal(item.getEffect())
-            print(item.getDescription())
-            input()
-            clear()
+            nicoPrint(item.getDescription())
             return True
         else:
             # if item isn't something we can use, put it back
@@ -170,10 +166,11 @@ player.equipWeapon(lesserSword)
 player.addItemToInventory(rock, 1)
 
 # slime-san has health of 15 HP, atack of 3, and def of 0 ... but he's not a BAD slime!
+# 俺は悪いスライムじゃない！
 slime = actor("slime", 15, 5, 1)
 
 battleTalk = ["the slime tries to wiggle menacingly.  you suddenly have a desire to eat jello",
-"the slime opens its mouth to say something, but blushes and looks away.  social anxiety +3 baka!",
+"the slime opens its mouth to say something, but blushes and looks away. social anxiety +3 baka!",
 "you wonder how slimes take showers without getting washed down the drain...maybe thats why they're slimey?",
 "the slime suddenly becomes nervous...on its lips you read: 'were taxes due last week?'",
 "you briefly consider wiggling to the slime, but then think it'd look stupid if you did it",
@@ -182,21 +179,13 @@ battleTalk = ["the slime tries to wiggle menacingly.  you suddenly have a desire
 clear()
 print("The Legend Of Nico")
 print("C 2019 Rudaitis Industries")
-print("press any button to begin...")
-input()
-clear()
+nicoPrint("press any button to begin...")
 
-print("Chapter 2: Rocky Plains")
-input()
-clear()
+nicoPrint("Chapter 2: Rocky Plains")
 
-print("a wild slime approaches!")
-input()
-clear()
+nicoPrint("a wild slime approaches!")
 
-print("uptempo music beings playing out of thin air!")
-input()
-clear()
+nicoPrint("uptempo music beings playing out of thin air!")
 
 while slime.getStatus() and player.getStatus():
 
@@ -228,9 +217,7 @@ while slime.getStatus() and player.getStatus():
             print("You can perfrom actions by loudly screaming out your intentions to your opponent...you wont look stupid, promise!")
             print("You can shout things such as \"attack\", \"search\", \"use\" and \"stats\"")
         else:
-            print("you mutter strange words to yourself but nothing happens")
-            input()
-            clear()
+            nicoPrint("you mutter strange words to yourself but nothing happens")
     
     if (slime.getStatus()):
         enemyAtk = slime.performAttack()
@@ -238,31 +225,13 @@ while slime.getStatus() and player.getStatus():
         print(battleTalk[random.randint(0, len(battleTalk)-1)])
 
 if (player.getStatus()):
-    print("The slime decides to rethink its life choices and hops away to buy some motivational tapes")
-    input()
-    clear()
-    print("5 EXP gained....oh...")
-    input()
-    clear()
-    print("...this is awkward...")
-    input()
-    clear()
-    print("...there isn't an EXP system yet...")
-    input()
-    clear()
-    print("Well thanks for playing bye now!")
-    input()
-    clear()
+    nicoPrint("The slime decides to rethink its life choices and hops away to buy some motivational tapes")
+    nicoPrint("5 EXP gained....oh...")
+    nicoPrint("...this is awkward...")
+    nicoPrint("...there isn't an EXP system yet...")
+    nicoPrint("Well thanks for playing bye now!")
 else:
-    print("Congrats you...oh...")
-    input()
-    clear()
-    print("Your lifeless body lies on the floor as the slime realizes it commited murder...")
-    input()
-    clear()
-    print("Good job, now what is this little slime gonna say to its slimely?...")
-    input()
-    clear()
-    print("Try again :(")
-    input()
-    clear()
+    nicoPrint("Congrats you...oh...")
+    nicoPrint("Your lifeless body lies on the floor as the slime realizes it commited murder...")
+    nicoPrint("Good job, now what is this little slime gonna say to its slimely?...")
+    nicoPrint("Try again :(")
